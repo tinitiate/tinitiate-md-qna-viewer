@@ -1,0 +1,26 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Markdown to HTML</title>
+  <style>
+ol {
+  height: 100px;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+}
+  </style>
+  </head>
+  <body>
+    <nav>
+      <ol>
+        {% for item in menu %}
+          <li><a href="#{{ item.url }}">{{ item.title }}</a></li>
+        {% endfor %}
+      </0l>
+    </nav>
+    {% for file in files %}
+      {{ file|safe }}
+    {% endfor %}
+  </body>
+</html>
